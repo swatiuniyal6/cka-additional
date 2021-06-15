@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: colour-pods
+  name: colour-pods
+spec:
+  containers:
+  - image: nginx
+    name: colour-pods
+  tolerations:
+  - key: "app"
+    value: "blue"
+    operator: "Equal"
+    effect: "NoSchedule"

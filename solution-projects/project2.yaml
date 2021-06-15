@@ -1,0 +1,33 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata: 
+  name: project-solution-dep
+spec: 
+  replicas: 1
+  selector: 
+    matchLabels: 
+      type: solution-project
+  template: 
+    metadata: 
+      labels: 
+        type: solution-project
+    spec: 
+      volumes:
+        - name:  simple-volume
+          emptyDir: {}
+      containers:
+        - name: cont1
+          image: nginx 
+          ports: 
+            - name: http
+              containerPort: 80
+          volumeMounts:
+            - name:  simple-volume
+              mountPath:  /usr/share/nginx/html/
+        - name: cont2
+          image: centos
+          command: ["sh", "-c", "while true; do echo `date` >> /fdrive/index.html; echo `date`; sleep 2; done;"]
+          volumeMounts: 
+            - name: simple-volume
+              mountPath: /fdrive 
+      

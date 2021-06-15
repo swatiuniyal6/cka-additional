@@ -1,0 +1,30 @@
+  kind: Service
+  apiVersion: v1
+  metadata:
+    name: solutionproject-svc
+  spec:
+    type: NodePort
+    selector:
+      type: solution-project
+    ports:
+      - port: 80
+        targetPort: 80
+~                                                                                                                                                                          
+~                                                                                                                                                                          
+~                                                                                                                                                                          
+~                                                                                                                                                                          
+~                                                                                                                                                                          
+~                                                                                                                                                                          
+~                                                                                                                                                                          
+~                                                                                                                                                                          
+~                                                                                                                                                                          
+~                                                                                                                                                                          
+~                                                                                                                                                                          
+~                                                                                                                                                                          
+~                                                                                                                                                                          
+~                                                                                                                                                                          
+~                                                                                                                                                                          
+~                                                                                                                                                                          
+~                                                                                                                                                                          
+~                                                                                                                                                                          
+-- INSERT --                                                                                                                                             11,21         All

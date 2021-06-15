@@ -1,0 +1,17 @@
+apiVersion: v1
+kind : Pod 
+metadata: 
+   name: pods-for-manual-schedule
+   labels:  #manadatory for defining labels 
+      group: manual-pod
+    
+spec: 
+   nodeName: ip-172-31-31-187
+   containers: 
+     - name: cont1 
+       image: nginx   
+       ports: 
+          - name: http
+            containerPort: 80
+          - name: https 
+            containerPort: 443 

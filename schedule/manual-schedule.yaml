@@ -1,0 +1,21 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: d1
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      role: myapp
+  template:
+    metadata:
+      labels:
+        role: myapp
+    spec:
+      nodeName: node1
+      containers:
+        - name: cont1
+          image: myrepo/httpd:verison
+          ports:
+           - name: http
+             containerPort: 80

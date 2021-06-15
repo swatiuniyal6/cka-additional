@@ -1,0 +1,26 @@
+kind: Pod   ## type of resource we want to create in k8s cluster -- kubectl api-resources
+apiVersion: v1
+metadata:
+  name: init-example-pod
+  labels:    ## defining lables for pods is mandatory 
+    group: cka-init-cont
+spec:
+  initContainers: 
+    - name: my-init-cont
+      image: ubuntu
+      command: ['sh', '-c', 'echo The app is running! && sleep 120']
+  containers:
+    - name: cont1
+      image: nginx:latest
+      ports: 
+        - name: http
+          containerPort: 80
+        - name: https
+          containerPort: 443
+    - name: cont1
+      image: nginx:latest
+      ports: 
+        - name: http
+          containerPort: 80
+        - name: https
+          containerPort: 443
